@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a reproducible problem without sharing account credentials
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never attach cookies, tokens, copied ChatGPT HTML, account exports, email addresses, or unredacted headers.** Use private vulnerability reporting for security issues.
+  - type: input
+    id: version
+    attributes:
+      label: Extension version
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: firefox
+    attributes:
+      label: Firefox version and operating system
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: Interface language
+      options: [English, Russian]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Use fictional names and redact all private data.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I removed all cookies, tokens, account IDs, emails, and other private data.
+          required: true

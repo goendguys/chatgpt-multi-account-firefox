@@ -1,0 +1,39 @@
+name: Check and build
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  extension:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Run checks
+        run: bun run check
+
+      - name: Validate Firefox extension package
+        run: bun run lint
+
+      - name: Build release archive
+        run: bun run build
+
+      - name: Upload unsigned archive
+        uses: actions/upload-artifact@v6
+        with:
+          name: chatgpt-multi-account-firefox-unsigned
+          path: web-ext-artifacts/*.zip
+          if-no-files-found: error

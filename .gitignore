@@ -1,0 +1,14 @@
+node_modules/
+web-ext-artifacts/
+*.xpi
+*.zip
+.DS_Store
+Thumbs.db
+
+# Never commit local captures or authentication exports.
+cookies*.json
+chatgpt-account*.json
+chatgpt-accounts*.json
+chatgpt*.html
+session*.json
+debug-private/

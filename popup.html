@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="actionTitle">ChatGPT accounts</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">⇄</span>
+        <div>
+          <h1 data-i18n="actionTitle">ChatGPT accounts</h1>
+          <p id="status" data-i18n="popupCheckingTab">Checking the current tab…</p>
+        </div>
+      </div>
+      <button id="open" type="button" disabled data-i18n="popupOpenMenu">Open account manager</button>
+      <section id="manager" hidden>
+        <div id="notice" role="status" hidden></div>
+        <div id="current"></div>
+        <div class="list-head">
+          <strong data-i18n="popupSaved">Saved</strong>
+          <span class="list-actions">
+            <span id="count">0</span>
+            <button id="refresh" type="button" aria-label="Refresh limits" title="Refresh limits">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6v5h-5M4 18v-5h5m9.5-4A7 7 0 0 0 6 7m-.5 8A7 7 0 0 0 18 17"/>
+              </svg>
+            </button>
+          </span>
+        </div>
+        <div id="accounts"></div>
+      </section>
+      <button id="page" class="secondary" type="button" disabled data-i18n="popupAttach">Show manager on page</button>
+      <button id="chatgpt" class="link-button" type="button" data-i18n="popupOpenChatgpt">Open ChatGPT</button>
+      <p class="hint" data-i18n="popupHint">The page button appears below Temporary Chat. This popup remains available as a fallback.</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
